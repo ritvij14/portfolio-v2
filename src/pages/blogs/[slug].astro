@@ -1,0 +1,52 @@
+---
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection('blogs', ({ data }) => {
+    return data.draft !== true;
+  });
+
+  return blogEntries.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{entry.data.title}</title>
+    <meta name="description" content={entry.data.description} />
+  </head>
+  <body>
+    <article>
+      <header>
+        <h1>{entry.data.title}</h1>
+        <p>{entry.data.description}</p>
+        <time datetime={entry.data.publishedDate.toISOString()}>
+          {entry.data.publishedDate.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+          })}
+        </time>
+        {entry.data.author && <p>By {entry.data.author}</p>}
+        {entry.data.tags && (
+          <div>
+            {entry.data.tags.map((tag) => (
+              <span>{tag}</span>
+            ))}
+          </div>
+        )}
+      </header>
+      <Content />
+      <a href="/blogs">← Back to all posts</a>
+    </article>
+  </body>
+</html>

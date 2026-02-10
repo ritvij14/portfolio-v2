@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+/* Custom Theme Configuration */
+@theme {
+  --font-sans: "Geist Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-title: "Rethink Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --color-dark: #050505;
+  --color-light: #fafafa;
+  --color-glass-dark: rgba(5, 5, 5, 0.7);
+  --color-glass-light: rgba(255, 255, 255, 0.7);
+
+  --animate-slide-up: slideUp 0.6s ease-in-out forwards;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 3px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #333;
+}
+
+html:not(.dark) ::-webkit-scrollbar-thumb {
+  background: #ccc;
+}
+
+/* Scroll Reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

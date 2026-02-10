@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en" class="dark scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Writing - Engineer Portfolio</title>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonts: Rethink Sans (Google) + Geist (CDN) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/geist@1.0.0/dist/fonts/geist-sans/style.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&amp;display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Geist Sans", "Inter", "sans-serif"],
+              title: ["Rethink Sans", "sans-serif"],
+              mono: ["IBM Plex Mono", "monospace"],
+            },
+            colors: {
+              dark: "#050505",
+              light: "#FAFAFA",
+              glass: {
+                dark: "rgba(5, 5, 5, 0.7)",
+                light: "rgba(255, 255, 255, 0.7)",
+              },
+            },
+            animation: {
+              "slide-up": "slideUp 0.6s ease-in-out forwards",
+            },
+            keyframes: {
+              slideUp: {
+                "0%": { transform: "translateY(40px)", opacity: "0" },
+                "100%": { transform: "translateY(0)", opacity: "1" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #333;
+        border-radius: 3px;
+      }
+      .dark ::-webkit-scrollbar-thumb {
+        background: #333;
+      }
+      html:not(.dark) ::-webkit-scrollbar-thumb {
+        background: #ccc;
+      }
+
+      /* Scroll Reveal */
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-light dark:bg-dark text-neutral-900 dark:text-neutral-100 font-sans transition-colors duration-500 antialiased selection:bg-neutral-200 dark:selection:bg-neutral-800"
+  >
+    <!-- Background Gradients -->
+    <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+      <div
+        class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-500/5 dark:bg-white/5 rounded-full blur-[120px]"
+      ></div>
+      <div
+        class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-purple-500/5 dark:bg-white/5 rounded-full blur-[120px]"
+      ></div>
+      <!-- Grid Pattern -->
+
+      <div
+        id="cursor-spotlight"
+        class="absolute inset-0 bg-[radial-gradient(600px_circle_at_var(--x,50%)_var(--y,50%),rgba(0,0,0,0.02),transparent_40%)] dark:bg-[radial-gradient(600px_circle_at_var(--x,50%)_var(--y,50%),rgba(255,255,255,0.04),transparent_40%)] opacity-0 transition-opacity duration-500 pointer-events-none"
+      ></div>
+      <div
+        class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay"
+      ></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav
+      class="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 w-auto max-w-[95vw] reveal"
+    >
+      <div
+        class="bg-glass-light dark:bg-glass-dark border border-neutral-200 dark:border-neutral-800 backdrop-blur-xl rounded-full p-1.5 shadow-sm flex items-center justify-between gap-2 transition-colors duration-300"
+      >
+        <!-- Links Group -->
+        <div class="flex items-center gap-1 pl-1">
+          <a
+            href="/"
+            class="text-xs font-medium text-neutral-500 dark:text-neutral-400 hover:text-black dark:hover:text-white hover:bg-neutral-200/50 dark:hover:bg-neutral-800/50 px-3 py-2 sm:py-1.5 rounded-full transition-all flex items-center justify-center"
+            title="Home"
+          >
+            <span class="hidden sm:block">Home</span>
+            <iconify-icon
+              icon="solar:home-linear"
+              class="block sm:hidden text-lg"
+            ></iconify-icon>
+          </a>
+          <a
+            href="#"
+            class="text-xs font-medium text-black dark:text-white bg-neutral-200/50 dark:bg-neutral-800/50 px-3 py-2 sm:py-1.5 rounded-full transition-all flex items-center justify-center"
+            title="Writing"
+          >
+            <span class="hidden sm:block">Writing</span>
+            <iconify-icon
+              icon="solar:notebook-linear"
+              class="block sm:hidden text-lg"
+            ></iconify-icon>
+          </a>
+        </div>
+
+        <!-- Divider -->
+        <div class="h-4 w-px bg-neutral-200 dark:bg-neutral-700"></div>
+
+        <!-- Right Group -->
+        <div class="flex items-center gap-1 pr-1">
+          <!-- Theme Toggle -->
+          <button
+            id="theme-toggle"
+            class="w-8 h-8 flex items-center justify-center rounded-full bg-transparent hover:bg-neutral-200/50 dark:hover:bg-neutral-800/50 text-neutral-600 dark:text-neutral-300 transition-all"
+            aria-label="Toggle Theme"
+          >
+            <iconify-icon
+              icon="solar:sun-2-linear"
+              class="hidden dark:block"
+              width="18"
+            ></iconify-icon>
+            <iconify-icon
+              icon="solar:moon-linear"
+              class="block dark:hidden"
+              width="18"
+            ></iconify-icon>
+          </button>
+
+          <!-- Contact Button -->
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="relative z-10 max-w-4xl mx-auto px-6 pt-32 pb-20 space-y-16">
+      <!-- Hero Section -->
+
+      <!-- About Section -->
+
+      <!-- Work Experience -->
+
+      <!-- Projects -->
+
+      <section id="blog" class="reveal min-h-[60vh]">
+        <div class="mb-16">
+          <h1
+            class="font-title text-4xl md:text-5xl font-medium tracking-tighter text-black dark:text-white mb-6"
+          >
+            Writing
+          </h1>
+          <p
+            class="text-lg text-neutral-500 dark:text-neutral-400 font-light max-w-2xl"
+          >
+            Thoughts on software engineering, design systems, and minimalism.
+          </p>
+        </div>
+        <div class="space-y-8">
+          <article
+            class="group relative flex flex-col md:flex-row gap-6 md:gap-12 items-start border-b border-neutral-200 dark:border-neutral-800 pb-8 hover:border-neutral-400 dark:hover:border-neutral-600 transition-colors"
+          >
+            <div class="md:w-32 flex-shrink-0 pt-1">
+              <span class="text-xs font-mono text-neutral-400">
+                Oct 12, 2023
+              </span>
+            </div>
+            <div class="flex-1">
+              <h3
+                class="font-title text-xl font-medium tracking-tight text-black dark:text-white mb-2 group-hover:underline decoration-1 underline-offset-4"
+              >
+                <a href="#" class="focus:outline-none">
+                  <span class="absolute inset-0" aria-hidden="true"></span>
+                  The Art of Minimalism in Software Design
+                </a>
+              </h3>
+              <p
+                class="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed mb-4 max-w-2xl"
+              >
+                Exploring why less is often more when it comes to building
+                maintainable, scalable systems. We look at code complexity, UI
+                clutter, and cognitive load.
+              </p>
+              <div class="flex gap-2">
+                <span
+                  class="text-[10px] font-mono bg-neutral-100 dark:bg-neutral-800 px-2 py-1 rounded text-neutral-500"
+                >
+                  Design
+                </span>
+                <span
+                  class="text-[10px] font-mono bg-neutral-100 dark:bg-neutral-800 px-2 py-1 rounded text-neutral-500"
+                >
+                  Philosophy
+                </span>
+              </div>
+            </div>
+            <div class="hidden md:block pt-1">
+              <iconify-icon
+                icon="solar:arrow-right-up-linear"
+                class="text-neutral-400 group-hover:text-black dark:group-hover:text-white transition-colors"
+              ></iconify-icon>
+            </div>
+          </article>
+          <article
+            class="group relative flex flex-col md:flex-row gap-6 md:gap-12 items-start border-b border-neutral-200 dark:border-neutral-800 pb-8 hover:border-neutral-400 dark:hover:border-neutral-600 transition-colors"
+          >
+            <div class="md:w-32 flex-shrink-0 pt-1">
+              <span class="text-xs font-mono text-neutral-400">
+                Sep 28, 2023
+              </span>
+            </div>
+            <div class="flex-1">
+              <h3
+                class="font-title text-xl font-medium tracking-tight text-black dark:text-white mb-2 group-hover:underline decoration-1 underline-offset-4"
+              >
+                <a href="#" class="focus:outline-none">
+                  <span class="absolute inset-0" aria-hidden="true"></span>
+                  Understanding Async Patterns
+                </a>
+              </h3>
+              <p
+                class="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed mb-4 max-w-2xl"
+              >
+                A deep dive into promises, async/await, and the event loop.
+                Understanding how to handle concurrency without blocking the
+                main thread.
+              </p>
+              <div class="flex gap-2">
+                <span
+                  class="text-[10px] font-mono bg-neutral-100 dark:bg-neutral-800 px-2 py-1 rounded text-neutral-500"
+                >
+                  Engineering
+                </span>
+                <span
+                  class="text-[10px] font-mono bg-neutral-100 dark:bg-neutral-800 px-2 py-1 rounded text-neutral-500"
+                >
+                  Node.js
+                </span>
+              </div>
+            </div>
+            <div class="hidden md:block pt-1">
+              <iconify-icon
+                icon="solar:arrow-right-up-linear"
+                class="text-neutral-400 group-hover:text-black dark:group-hover:text-white transition-colors"
+              ></iconify-icon>
+            </div>
+          </article>
+          <article
+            class="group relative flex flex-col md:flex-row gap-6 md:gap-12 items-start border-b border-neutral-200 dark:border-neutral-800 pb-8 hover:border-neutral-400 dark:hover:border-neutral-600 transition-colors"
+          >
+            <div class="md:w-32 flex-shrink-0 pt-1">
+              <span class="text-xs font-mono text-neutral-400">
+                Aug 15, 2023
+              </span>
+            </div>
+            <div class="flex-1">
+              <h3
+                class="font-title text-xl font-medium tracking-tight text-black dark:text-white mb-2 group-hover:underline decoration-1 underline-offset-4"
+              >
+                <a href="#" class="focus:outline-none">
+                  <span class="absolute inset-0" aria-hidden="true"></span>
+                  Tailwind CSS: Beyond Utility Classes
+                </a>
+              </h3>
+              <p
+                class="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed mb-4 max-w-2xl"
+              >
+                How to build a robust design system using Tailwind's
+                configuration and plugin ecosystem effectively.
+              </p>
+              <div class="flex gap-2">
+                <span
+                  class="text-[10px] font-mono bg-neutral-100 dark:bg-neutral-800 px-2 py-1 rounded text-neutral-500"
+                >
+                  CSS
+                </span>
+                <span
+                  class="text-[10px] font-mono bg-neutral-100 dark:bg-neutral-800 px-2 py-1 rounded text-neutral-500"
+                >
+                  Frontend
+                </span>
+              </div>
+            </div>
+            <div class="hidden md:block pt-1">
+              <iconify-icon
+                icon="solar:arrow-right-up-linear"
+                class="text-neutral-400 group-hover:text-black dark:group-hover:text-white transition-colors"
+              ></iconify-icon>
+            </div>
+          </article>
+          <article
+            class="group relative flex flex-col md:flex-row gap-6 md:gap-12 items-start pb-2"
+          >
+            <div class="md:w-32 flex-shrink-0 pt-1">
+              <span class="text-xs font-mono text-neutral-400">
+                Jul 02, 2023
+              </span>
+            </div>
+            <div class="flex-1">
+              <h3
+                class="font-title text-xl font-medium tracking-tight text-black dark:text-white mb-2 group-hover:underline decoration-1 underline-offset-4"
+              >
+                <a href="#" class="focus:outline-none">
+                  <span class="absolute inset-0" aria-hidden="true"></span>
+                  Database Indexing Strategies
+                </a>
+              </h3>
+              <p
+                class="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed mb-4 max-w-2xl"
+              >
+                Optimizing SQL queries and understanding B-Trees to improve
+                application performance at scale.
+              </p>
+              <div class="flex gap-2">
+                <span
+                  class="text-[10px] font-mono bg-neutral-100 dark:bg-neutral-800 px-2 py-1 rounded text-neutral-500"
+                >
+                  Database
+                </span>
+                <span
+                  class="text-[10px] font-mono bg-neutral-100 dark:bg-neutral-800 px-2 py-1 rounded text-neutral-500"
+                >
+                  Backend
+                </span>
+              </div>
+            </div>
+            <div class="hidden md:block pt-1">
+              <iconify-icon
+                icon="solar:arrow-right-up-linear"
+                class="text-neutral-400 group-hover:text-black dark:group-hover:text-white transition-colors"
+              ></iconify-icon>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+
+      <footer class="text-center pb-10 reveal">
+        <p class="text-xs text-neutral-500 font-mono">
+          © 2023 Minimal Portfolio. All rights reserved.
+        </p>
+      </footer>
+    </main>
+
+    <script>
+      // Theme Toggle Logic
+      const toggleBtn = document.getElementById("theme-toggle");
+      const html = document.documentElement;
+
+      toggleBtn.addEventListener("click", () => {
+        if (html.classList.contains("dark")) {
+          html.classList.remove("dark");
+        } else {
+          html.classList.add("dark");
+        }
+      });
+
+      // Scroll Reveal Logic
+      const observer = new IntersectionObserver(
+        (entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              obs.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.1,
+        }
+      );
+
+      document
+        .querySelectorAll(".reveal")
+        .forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>
