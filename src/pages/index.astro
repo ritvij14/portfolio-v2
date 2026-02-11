@@ -88,7 +88,7 @@ import '../styles/global.css';
           </a>
 
           <!-- Projects -->
-          <a
+          <!-- <a
             href="#projects"
             class="text-xs font-medium text-neutral-500 dark:text-neutral-400 hover:text-black dark:hover:text-white hover:bg-neutral-200/50 dark:hover:bg-neutral-800/50 px-3 py-2 sm:py-1.5 rounded-full transition-all flex items-center justify-center"
             title="Projects"
@@ -98,8 +98,8 @@ import '../styles/global.css';
               icon="solar:folder-linear"
               class="block sm:hidden text-lg"
             ></iconify-icon>
-          </a>
-          <a
+          </a> -->
+          <!-- <a
             href="/blogs"
             class="text-xs font-medium text-neutral-500 dark:text-neutral-400 hover:text-black dark:hover:text-white hover:bg-neutral-200/50 dark:hover:bg-neutral-800/50 px-3 py-2 sm:py-1.5 rounded-full transition-all flex items-center justify-center"
             title="Blog"
@@ -109,7 +109,7 @@ import '../styles/global.css';
               icon="solar:notebook-linear"
               class="block sm:hidden text-lg"
             ></iconify-icon>
-          </a>
+          </a> -->
         </div>
 
         <!-- Divider -->
@@ -120,7 +120,7 @@ import '../styles/global.css';
           <!-- Theme Toggle -->
           <button
             id="theme-toggle"
-            class="w-8 h-8 flex items-center justify-center rounded-full bg-transparent hover:bg-neutral-200/50 dark:hover:bg-neutral-800/50 text-neutral-600 dark:text-neutral-300 transition-all"
+            class="w-8 h-8 flex items-center justify-center rounded-full bg-transparent hover:bg-neutral-200/50 dark:hover:bg-neutral-800/50 text-neutral-800 dark:text-neutral-300 transition-all"
             aria-label="Toggle Theme"
           >
             <iconify-icon
@@ -147,55 +147,59 @@ import '../styles/global.css';
     </nav>
 
     <!-- Main Content -->
-    <main class="relative z-10 max-w-4xl mx-auto px-6 pt-32 pb-20 space-y-32">
+    <main class="relative z-10 max-w-6xl mx-auto px-6 pt-32 pb-20 space-y-32">
       <!-- Hero Section -->
       <section
         id="hero"
         class="min-h-[70vh] flex flex-col justify-center reveal delay-200"
       >
-        <div class="grid lg:grid-cols-12 gap-12 items-center">
-          <div class="lg:col-span-7">
+        <div class="grid md:grid-cols-12 gap-12 items-center">
+          <div class="md:col-span-7">
             <h1
               class="font-title text-5xl md:text-6xl lg:text-7xl font-medium tracking-tighter leading-[1.1] mb-6"
             >
               Building digital
               <br />
-              <span class="text-neutral-400 dark:text-neutral-600">
+              <span class="text-neutral-500 dark:text-neutral-600">
                 products & experiences.
               </span>
             </h1>
 
             <p
-              class="text-lg md:text-xl text-neutral-500 dark:text-neutral-400 font-light leading-relaxed max-w-xl"
+              class="text-lg md:text-xl text-neutral-800 dark:text-neutral-200 font-light leading-relaxed max-w-xl"
             >
-              I'm a Full Stack Engineer focused on crafting clean, accessible,
-              and performant software using modern technologies.
+              I'm a Software Engineer focused on crafting clean, accessible,
+              and robust software using modern technologies.
             </p>
 
             <div class="flex items-center gap-4 mt-10">
-              <a
+              <!-- <a
                 href="#projects"
                 class="group flex items-center gap-2 text-sm font-medium border-b border-neutral-300 dark:border-neutral-700 pb-1 hover:border-black dark:hover:border-white transition-colors"
               >
                 View Projects
                 <iconify-icon
-                  icon="solar:arrow-right-linear"
+                  icon="solar:arrow-down-linear"
                   width="16"
                   class="group-hover:translate-x-1 transition-transform"
                 ></iconify-icon>
-              </a>
-              <div class="flex gap-3 ml-4 text-neutral-400">
+              </a> -->
+              <div class="flex gap-3 ml-4 text-neutral-600 dark:text-neutral-400">
+                <!-- github -->
                 <a
-                  href="#"
+                  href="https://github.com/ritvij14"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="hover:text-black dark:hover:text-white transition-colors"
                 >
                   <iconify-icon
-                    icon="solar:cat-linear"
+                    icon="entypo-social:github"
                     width="20"
                   ></iconify-icon>
                 </a>
+                <!-- mail -->
                 <a
-                  href="#"
+                  href="mailto:ritvij2001@gmail.com"
                   class="hover:text-black dark:hover:text-white transition-colors"
                 >
                   <iconify-icon
@@ -203,16 +207,51 @@ import '../styles/global.css';
                     width="20"
                   ></iconify-icon>
                 </a>
+                <!-- X (Twitter) -->
+                <a
+                  href="https://x.com/ritvij14_"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:text-black dark:hover:text-white transition-colors"
+                >
+                  <iconify-icon
+                    icon="codicon:twitter"
+                    width="20"
+                  ></iconify-icon>
+                </a>
+                <!-- linkedin -->
+                <a
+                  href="https://www.linkedin.com/in/rks-1410/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:text-black dark:hover:text-white transition-colors"
+                >
+                  <iconify-icon
+                    icon="pajamas:linkedin"
+                    width="20"
+                  ></iconify-icon>
+                </a>
+                <!-- resume -->
+                <a
+                  href="https://drive.google.com/file/d/1lK3I6pqOAmrLJquBx_0EuZsjdGodngfm/view"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:text-black dark:hover:text-white transition-colors"
+                >
+                  <iconify-icon
+                    icon="mdi:resume"
+                    width="20"
+                  ></iconify-icon>
+                </a>
               </div>
             </div>
           </div>
-          <div class="lg:col-span-5 w-full max-w-sm lg:max-w-none mx-auto">
-            <div class="relative group">
+            <div class="relative group md:col-span-5 w-full max-w-sm md:max-w-none mx-auto">
               <div
-                class="absolute -inset-4 bg-gradient-to-tr from-blue-500/10 via-transparent to-purple-500/10 rounded-[2rem] blur-2xl opacity-0 group-hover:opacity-100 transition duration-1000"
+                class="absolute -inset-4 bg-linear-to-tr from-blue-500/10 via-transparent to-purple-500/10 rounded-4xl blur-2xl opacity-0 group-hover:opacity-100 transition duration-1000"
               ></div>
               <div
-                class="relative aspect-[4/5] rounded-2xl overflow-hidden bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-2xl transition-all duration-500 group-hover:scale-[1.02]"
+                class="relative aspect-4/5 rounded-2xl overflow-hidden bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-2xl transition-all duration-500 group-hover:scale-[1.02]"
               >
                 <img
                   src="/ritvij-dev.png"
@@ -221,7 +260,6 @@ import '../styles/global.css';
                 />
               </div>
             </div>
-          </div>
         </div>
       </section>
 
@@ -232,62 +270,24 @@ import '../styles/global.css';
         >
           01 / About
         </h2>
-        <div class="grid md:grid-cols-3 gap-12">
           <div
-            class="md:col-span-2 space-y-6 text-neutral-600 dark:text-neutral-400 font-light leading-relaxed"
+            class="md:col-span-2 space-y-6 text-neutral-800 dark:text-neutral-200 text-xl font-light leading-relaxed"
           >
             <p>
               I believe complexity should be managed, not exposed. My approach
-              to engineering centers on minimalism—writing code that is as
-              expressive as it is efficient.
+              to engineering centers on simplicity.
             </p>
             <p>
-              With a background in systems architecture and interface design, I
-              bridge the gap between backend logic and frontend aesthetics. I
-              enjoy solving problems that require a deep understanding of the
-              entire stack.
+              With a background in software engineering and building scalable, high-impact systems, I
+              bridge the gap between ideas and execution. I enjoy solving problems
+              that require a deep understanding of the entire stack.
+            </p>
+            <p>
+              My coding journey began way back in high-school when I was introduced to
+              Java programming language. Fast forward to today, I have worked on several projects
+              and have gained 5 years of hands-on experience in software development.
             </p>
           </div>
-          <div class="md:col-span-1">
-            <h3
-              class="font-title text-sm font-medium text-black dark:text-white mb-4"
-            >
-              Tech Stack
-            </h3>
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="px-3 py-1 text-xs border border-neutral-200 dark:border-neutral-800 rounded-full text-neutral-500"
-              >
-                TypeScript
-              </span>
-              <span
-                class="px-3 py-1 text-xs border border-neutral-200 dark:border-neutral-800 rounded-full text-neutral-500"
-              >
-                React
-              </span>
-              <span
-                class="px-3 py-1 text-xs border border-neutral-200 dark:border-neutral-800 rounded-full text-neutral-500"
-              >
-                Node.js
-              </span>
-              <span
-                class="px-3 py-1 text-xs border border-neutral-200 dark:border-neutral-800 rounded-full text-neutral-500"
-              >
-                Tailwind
-              </span>
-              <span
-                class="px-3 py-1 text-xs border border-neutral-200 dark:border-neutral-800 rounded-full text-neutral-500"
-              >
-                PostgreSQL
-              </span>
-              <span
-                class="px-3 py-1 text-xs border border-neutral-200 dark:border-neutral-800 rounded-full text-neutral-500"
-              >
-                AWS
-              </span>
-            </div>
-          </div>
-        </div>
       </section>
 
       <!-- Work Experience -->
@@ -301,6 +301,150 @@ import '../styles/global.css';
         <div
           class="relative border-l border-neutral-200 dark:border-neutral-800 ml-3 space-y-12"
         >
+          <!-- Job 4 -->
+          <div class="relative pl-8">
+            <div
+              class="absolute -left-[5px] top-2 w-[9px] h-[9px] rounded-full bg-neutral-300 dark:bg-neutral-700 ring-4 ring-white dark:ring-black"
+            ></div>
+            <div
+              class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2"
+            >
+              <h3
+                class="font-title text-xl font-medium tracking-tight text-black dark:text-white"
+              >
+                Principal Engineer
+              </h3>
+              <span class="font-mono text-xs text-neutral-400">
+                May 2022 — Present
+              </span>
+            </div>
+            <a
+                href="https://kendal.ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group mb-3 flex w-fit items-center gap-2 text-sm font-medium border-b border-neutral-300 dark:border-neutral-700 pb-1 hover:border-black dark:hover:border-white transition-colors"
+              >
+                Kendal AI
+                <iconify-icon
+                  icon="radix-icons:arrow-top-right"
+                  width="16"
+                  class="group-hover:scale-[1.02] transition-all"
+                ></iconify-icon>
+              </a>
+            <div
+              class="text-base text-neutral-800 dark:text-neutral-300 font-light leading-relaxed max-w-4xl"
+            >
+              <ul class="list-disc">
+                <li>
+                  Played a pivotal role in building Kendal AI's AI-powered CRM from the ground up, now used by 60+ real estate brokerages.
+                </li>
+                <li>
+                  Developed a custom website builder enabling agents to launch 200+ SEO-optimized, lead-generating websites.
+                </li>
+                <li>
+                  Built an email marketing engine to support targeted outreach to 50,000+ prospective clients per month.
+                </li>
+                <li>
+                  Engineered a scalable Contact, Property, and Deal Management System with real-time filtering and analytics dashboards.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Job 3 -->
+          <div class="relative pl-8">
+            <div
+              class="absolute -left-[5px] top-2 w-[9px] h-[9px] rounded-full bg-neutral-300 dark:bg-neutral-700 ring-4 ring-white dark:ring-black"
+            ></div>
+            <div
+              class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2"
+            >
+              <h3
+                class="font-title text-xl font-medium tracking-tight text-black dark:text-white"
+              >
+                Software Engineer
+              </h3>
+              <span class="font-mono text-xs text-neutral-400">
+                July 2021 - April 2022
+              </span>
+            </div>
+            <a
+                href="https://huddle01.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group mb-3 flex w-fit items-center gap-2 text-sm font-medium border-b border-neutral-300 dark:border-neutral-700 pb-1 hover:border-black dark:hover:border-white transition-colors"
+              >
+                Huddle01
+                <iconify-icon
+                  icon="radix-icons:arrow-top-right"
+                  width="16"
+                  class="group-hover:scale-[1.02] transition-all"
+                ></iconify-icon>
+              </a>
+            <div
+              class="text-base text-neutral-800 dark:text-neutral-300 font-light leading-relaxed max-w-4xl"
+            >
+              <ul class="list-disc">
+                <li>
+                  Contributed to building a Flutter SDK enabling mobile apps to support WebRTC-based video and audio communication.
+                </li>
+                <li>
+                  Integrated Web3 features - wallet authentication, NFTs, tipping in livestreams, and token-gated meetings.
+                </li>
+                <li>
+                  Extended Web3 functionality into the React Native platform to ensure cross-platform parity across mobile and web apps.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Job 2 -->
+          <div class="relative pl-8">
+            <div
+              class="absolute -left-[5px] top-2 w-[9px] h-[9px] rounded-full bg-neutral-300 dark:bg-neutral-700 ring-4 ring-white dark:ring-black"
+            ></div>
+            <div
+              class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2"
+            >
+              <h3
+                class="font-title text-xl font-medium tracking-tight text-black dark:text-white"
+              >
+                Software Engineering Intern
+              </h3>
+              <span class="font-mono text-xs text-neutral-400">
+                June 2021 - July 2021
+              </span>
+            </div>
+            <a
+                href="https://www.agnext.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group mb-3 flex w-fit items-center gap-2 text-sm font-medium border-b border-neutral-300 dark:border-neutral-700 pb-1 hover:border-black dark:hover:border-white transition-colors"
+              >
+                AgNext Technologies
+                <iconify-icon
+                  icon="radix-icons:arrow-top-right"
+                  width="16"
+                  class="group-hover:scale-[1.02] transition-all"
+                ></iconify-icon>
+              </a>
+            <div
+              class="text-base text-neutral-800 dark:text-neutral-300 font-light leading-relaxed max-w-4xl"
+            >
+              <ul class="list-disc">
+                <li>
+                  Worked on the redesign of the Laboratory Information Management System(LIMS) for AgNext.
+                </li>
+                <li>
+                  Design and development of inventory management features.
+                </li>
+                <li>
+                  Contributed to Report Storage system.
+                </li>
+              </ul>
+            </div>
+          </div>
+
           <!-- Job 1 -->
           <div class="relative pl-8">
             <div
@@ -310,55 +454,210 @@ import '../styles/global.css';
               class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2"
             >
               <h3
-                class="font-title text-lg font-medium tracking-tight text-black dark:text-white"
+                class="font-title text-xl font-medium tracking-tight text-black dark:text-white"
               >
-                Senior Engineer
+                Mobile App Dev Intern
               </h3>
               <span class="font-mono text-xs text-neutral-400">
-                2022 — Present
+                April 2020 - June 2020
               </span>
             </div>
-            <p class="text-sm text-neutral-500 mb-3">Tech Corp Inc.</p>
-            <p
-              class="text-sm text-neutral-600 dark:text-neutral-400 font-light leading-relaxed max-w-2xl"
-            >
-              Leading the frontend infrastructure team. Migrated legacy codebase
-              to Next.js, improving load times by 40%. Implemented a
-              comprehensive design system used across 5 products.
-            </p>
-          </div>
-
-          <!-- Job 2 -->
-          <div class="relative pl-8">
-            <div
-              class="absolute -left-[5px] top-2 w-[9px] h-[9px] rounded-full bg-neutral-200 dark:bg-neutral-800 ring-4 ring-white dark:ring-black"
-            ></div>
-            <div
-              class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2"
-            >
-              <h3
-                class="font-title text-lg font-medium tracking-tight text-black dark:text-white"
+            <a
+                href="https://www.lifesparktech.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group mb-3 flex w-fit items-center gap-2 text-sm font-medium border-b border-neutral-300 dark:border-neutral-700 pb-1 hover:border-black dark:hover:border-white transition-colors"
               >
-                Software Developer
-              </h3>
-              <span class="font-mono text-xs text-neutral-400">
-                2019 — 2022
-              </span>
-            </div>
-            <p class="text-sm text-neutral-500 mb-3">Startup Studio</p>
-            <p
-              class="text-sm text-neutral-600 dark:text-neutral-400 font-light leading-relaxed max-w-2xl"
+                LifeSpark Technologies
+                <iconify-icon
+                  icon="radix-icons:arrow-top-right"
+                  width="16"
+                  class="group-hover:scale-[1.02] transition-all"
+                ></iconify-icon>
+              </a>
+            <div
+              class="text-base text-neutral-800 dark:text-neutral-300 font-light leading-relaxed max-w-4xl"
             >
-              Developed scalable REST APIs using Node.js and Express.
-              Collaborated with designers to implement pixel-perfect UIs.
-            </p>
+              <ul class="list-disc">
+                <li>
+                  MVP for COVID-safety mobile app - alerting users based on GPS + Bluetooth.
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- Projects -->
+ 
+
+      <!-- Contact Section -->
+      <section id="contact" class="reveal pb-20">
+        <h2
+          class="text-xs font-mono uppercase tracking-widest mb-10"
+        >
+          03 / Contact
+        </h2>
+
+        <div
+          class="bg-neutral-50 dark:bg-white/5 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-8 md:p-12"
+        >
+          <div class="grid md:grid-cols-2 gap-12">
+            <div>
+              <h3 class="font-title text-2xl font-medium tracking-tight mb-4">
+                Get in touch
+              </h3>
+              <p
+                class="text-sm text-neutral-500 dark:text-neutral-400 font-light mb-8"
+              >
+                Want to say hi? I'm always open
+                to discussing new ideas.
+              </p>
+            </div>
+
+            <div class="space-y-4">
+                <a
+                  href="mailto:ritvij2001@gmail.com"
+                  class="flex items-center text-lg gap-3 text-black dark:text-white hover:opacity-70 transition-opacity"
+                >
+                  <div
+                    class="rounded-full bg-neutral-200 dark:bg-neutral-800 flex items-center"
+                  >
+                    <iconify-icon
+                      icon="solar:letter-linear"
+                      width="16"
+                    ></iconify-icon>
+                  </div>
+                  ritvij2001@gmail.com
+                </a>
+                <div class="flex gap-3 text-neutral-600 dark:text-neutral-400">
+                
+                
+                <!-- X (Twitter) -->
+                <a
+                  href="https://x.com/ritvij14_"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:text-black dark:hover:text-white transition-colors"
+                >
+                  <iconify-icon
+                    icon="codicon:twitter"
+                    width="20"
+                  ></iconify-icon>
+                </a>
+                <!-- linkedin -->
+                <a
+                  href="https://www.linkedin.com/in/rks-1410/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:text-black dark:hover:text-white transition-colors"
+                >
+                  <iconify-icon
+                    icon="pajamas:linkedin"
+                    width="20"
+                  ></iconify-icon>
+                </a>
+                
+              </div>
+              </div>
+
+            <!-- <form class="space-y-4" onsubmit="event.preventDefault()"> -->
+              <!-- <div class="grid grid-cols-2 gap-4">
+                <div class="space-y-1">
+                  <label class="text-xs font-mono text-neutral-500">Name</label>
+                  <input
+                    type="text"
+                    class="w-full bg-transparent border-b border-neutral-300 dark:border-neutral-700 py-2 text-sm focus:outline-none focus:border-black dark:focus:border-white transition-colors"
+                    placeholder="John Doe"
+                  />
+                </div>
+                <div class="space-y-1">
+                  <label class="text-xs font-mono text-neutral-500">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    class="w-full bg-transparent border-b border-neutral-300 dark:border-neutral-700 py-2 text-sm focus:outline-none focus:border-black dark:focus:border-white transition-colors"
+                    placeholder="john@example.com"
+                  />
+                </div>
+              </div> -->
+              <!-- <div class="space-y-1">
+                <label class="text-xs font-mono text-neutral-500">
+                  Message
+                </label>
+                <textarea
+                  rows="3"
+                  class="w-full bg-transparent border-b border-neutral-300 dark:border-neutral-700 py-2 text-sm focus:outline-none focus:border-black dark:focus:border-white transition-colors resize-none"
+                  placeholder="Tell me about you / your work..."
+                ></textarea>
+              </div> -->
+
+              <!-- Custom Checkbox -->
+              <!-- <div class="flex items-center gap-2 pt-2">
+                <label class="relative inline-flex items-center cursor-pointer">
+                  <input type="checkbox" class="peer sr-only" />
+                  <div
+                    class="w-4 h-4 border border-neutral-400 dark:border-neutral-600 rounded flex items-center justify-center peer-checked:bg-black dark:peer-checked:bg-white peer-checked:border-transparent transition-all"
+                  >
+                    <iconify-icon
+                      icon="solar:check-read-linear"
+                      class="text-white dark:text-black opacity-0 peer-checked:opacity-100 text-[10px]"
+                    ></iconify-icon>
+                  </div>
+                  <span class="ml-2 text-xs text-neutral-500 select-none">
+                    Subscribe to newsletter
+                  </span>
+                </label>
+              </div> -->
+
+              <!-- <button
+                class="mt-4 bg-black dark:bg-white text-white dark:text-black text-sm font-medium px-6 py-2.5 rounded-full hover:opacity-80 transition-opacity w-full md:w-auto"
+              >
+                Send Message
+              </button> -->
+            <!-- </form> -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Client-side Scripts -->
+    <script>
+      // Theme Toggle Logic
+      const toggleBtn = document.getElementById("theme-toggle");
+      const html = document.documentElement;
+
+      toggleBtn?.addEventListener("click", () => {
+        if (html.classList.contains("dark")) {
+          html.classList.remove("dark");
+        } else {
+          html.classList.add("dark");
+        }
+      });
+
+      // Scroll Reveal Logic
+      const observer = new IntersectionObserver(
+        (entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              obs.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.1,
+        }
+      );
+
+      document
+        .querySelectorAll(".reveal")
+        .forEach((el) => observer.observe(el));
+
+        /**
+         *      <!-- Projects -->
       <section id="projects" class="reveal">
-        <div class="flex items-end justify-between mb-10">
+        <!-- <div class="flex items-end justify-between mb-10">
           <h2
             class="text-xs font-mono uppercase tracking-widest"
           >
@@ -370,7 +669,7 @@ import '../styles/global.css';
           >
             View Github ->
           </a>
-        </div>
+        </div> -->
 
         <div class="grid md:grid-cols-2 gap-6">
           <!-- Project Card 1 -->
@@ -513,161 +812,7 @@ import '../styles/global.css';
           </div>
         </div>
       </section>
-
-      <!-- Contact Section -->
-      <section id="contact" class="reveal pb-20">
-        <h2
-          class="text-xs font-mono uppercase tracking-widest mb-10"
-        >
-          04 / Contact
-        </h2>
-
-        <div
-          class="bg-neutral-50 dark:bg-white/5 border border-neutral-200 dark:border-neutral-800 rounded-2xl p-8 md:p-12"
-        >
-          <div class="grid md:grid-cols-2 gap-12">
-            <div>
-              <h3 class="font-title text-2xl font-medium tracking-tight mb-4">
-                Let's work together
-              </h3>
-              <p
-                class="text-sm text-neutral-500 dark:text-neutral-400 font-light mb-8"
-              >
-                Have a project in mind or just want to say hi? I'm always open
-                to discussing new opportunities.
-              </p>
-
-              <div class="space-y-4">
-                <a
-                  href="mailto:hello@example.com"
-                  class="flex items-center gap-3 text-sm text-black dark:text-white hover:opacity-70 transition-opacity"
-                >
-                  <div
-                    class="w-8 h-8 rounded-full bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center"
-                  >
-                    <iconify-icon
-                      icon="solar:letter-linear"
-                      width="16"
-                    ></iconify-icon>
-                  </div>
-                  hello@example.com
-                </a>
-                <a
-                  href="#"
-                  class="flex items-center gap-3 text-sm text-black dark:text-white hover:opacity-70 transition-opacity"
-                >
-                  <div
-                    class="w-8 h-8 rounded-full bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center"
-                  >
-                    <iconify-icon
-                      icon="solar:smart-phone-linear"
-                      width="16"
-                    ></iconify-icon>
-                  </div>
-                  +1 (555) 000-0000
-                </a>
-              </div>
-            </div>
-
-            <form class="space-y-4" onsubmit="event.preventDefault()">
-              <div class="grid grid-cols-2 gap-4">
-                <div class="space-y-1">
-                  <label class="text-xs font-mono text-neutral-500">Name</label>
-                  <input
-                    type="text"
-                    class="w-full bg-transparent border-b border-neutral-300 dark:border-neutral-700 py-2 text-sm focus:outline-none focus:border-black dark:focus:border-white transition-colors"
-                    placeholder="John Doe"
-                  />
-                </div>
-                <div class="space-y-1">
-                  <label class="text-xs font-mono text-neutral-500">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    class="w-full bg-transparent border-b border-neutral-300 dark:border-neutral-700 py-2 text-sm focus:outline-none focus:border-black dark:focus:border-white transition-colors"
-                    placeholder="john@example.com"
-                  />
-                </div>
-              </div>
-              <div class="space-y-1">
-                <label class="text-xs font-mono text-neutral-500">
-                  Message
-                </label>
-                <textarea
-                  rows="3"
-                  class="w-full bg-transparent border-b border-neutral-300 dark:border-neutral-700 py-2 text-sm focus:outline-none focus:border-black dark:focus:border-white transition-colors resize-none"
-                  placeholder="Tell me about your project..."
-                ></textarea>
-              </div>
-
-              <!-- Custom Checkbox -->
-              <div class="flex items-center gap-2 pt-2">
-                <label class="relative inline-flex items-center cursor-pointer">
-                  <input type="checkbox" class="peer sr-only" />
-                  <div
-                    class="w-4 h-4 border border-neutral-400 dark:border-neutral-600 rounded flex items-center justify-center peer-checked:bg-black dark:peer-checked:bg-white peer-checked:border-transparent transition-all"
-                  >
-                    <iconify-icon
-                      icon="solar:check-read-linear"
-                      class="text-white dark:text-black opacity-0 peer-checked:opacity-100 text-[10px]"
-                    ></iconify-icon>
-                  </div>
-                  <span class="ml-2 text-xs text-neutral-500 select-none">
-                    Subscribe to newsletter
-                  </span>
-                </label>
-              </div>
-
-              <button
-                class="mt-4 bg-black dark:bg-white text-white dark:text-black text-sm font-medium px-6 py-2.5 rounded-full hover:opacity-80 transition-opacity w-full md:w-auto"
-              >
-                Send Message
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
-
-      <footer class="text-center pb-10 reveal">
-        <p class="text-xs text-neutral-500 font-mono">
-          © 2023 Minimal Portfolio. All rights reserved.
-        </p>
-      </footer>
-    </main>
-
-    <!-- Client-side Scripts -->
-    <script>
-      // Theme Toggle Logic
-      const toggleBtn = document.getElementById("theme-toggle");
-      const html = document.documentElement;
-
-      toggleBtn?.addEventListener("click", () => {
-        if (html.classList.contains("dark")) {
-          html.classList.remove("dark");
-        } else {
-          html.classList.add("dark");
-        }
-      });
-
-      // Scroll Reveal Logic
-      const observer = new IntersectionObserver(
-        (entries, obs) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
-              obs.unobserve(entry.target);
-            }
-          });
-        },
-        {
-          threshold: 0.1,
-        }
-      );
-
-      document
-        .querySelectorAll(".reveal")
-        .forEach((el) => observer.observe(el));
+         */
     </script>
   </body>
 </html>
