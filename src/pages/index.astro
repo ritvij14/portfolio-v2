@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import profileImage from '../assets/ritvij-dev.png';
 import '../styles/global.css';
 ---
 
@@ -47,7 +49,7 @@ import '../styles/global.css';
         class="absolute inset-0 bg-[radial-gradient(600px_circle_at_var(--x,50%)_var(--y,50%),rgba(0,0,0,0.02),transparent_40%)] dark:bg-[radial-gradient(600px_circle_at_var(--x,50%)_var(--y,50%),rgba(255,255,255,0.04),transparent_40%)] opacity-0 transition-opacity duration-500 pointer-events-none"
       ></div>
       <div
-        class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay"
+        class="absolute inset-0 bg-[url('/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay"
       ></div>
     </div>
 
@@ -87,7 +89,7 @@ import '../styles/global.css';
           </a>
 
           <!-- Projects -->
-          <!-- <a
+          <a
             href="#projects"
             class="text-xs font-medium text-neutral-500 dark:text-neutral-400 hover:text-black dark:hover:text-white hover:bg-neutral-200/50 dark:hover:bg-neutral-800/50 px-3 py-2 sm:py-1.5 rounded-full transition-all flex items-center justify-center"
             title="Projects"
@@ -97,7 +99,7 @@ import '../styles/global.css';
               icon="solar:folder-linear"
               class="block sm:hidden text-lg"
             ></iconify-icon>
-          </a> -->
+          </a>
           <!-- <a
             href="/blogs"
             class="text-xs font-medium text-neutral-500 dark:text-neutral-400 hover:text-black dark:hover:text-white hover:bg-neutral-200/50 dark:hover:bg-neutral-800/50 px-3 py-2 sm:py-1.5 rounded-full transition-all flex items-center justify-center"
@@ -172,17 +174,17 @@ import '../styles/global.css';
             </p>
 
             <div class="flex items-center gap-4 mt-10">
-              <!-- <a
+              <a
                 href="#projects"
                 class="group flex items-center gap-2 text-sm font-medium border-b border-neutral-300 dark:border-neutral-700 pb-1 hover:border-black dark:hover:border-white transition-colors"
               >
                 View Projects
                 <iconify-icon
-                  icon="solar:arrow-down-linear"
+                  icon="solar:arrow-right-linear"
                   width="16"
                   class="group-hover:translate-x-1 transition-transform"
                 ></iconify-icon>
-              </a> -->
+              </a>
               <div class="flex gap-3 ml-4 text-neutral-600 dark:text-neutral-400">
                 <!-- github -->
                 <a
@@ -252,8 +254,8 @@ import '../styles/global.css';
               <div
                 class="relative aspect-4/5 rounded-2xl overflow-hidden bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-2xl transition-all duration-500 group-hover:scale-[1.02]"
               >
-                <img
-                  src="/ritvij-dev.png"
+                <Image
+                  src={profileImage}
                   alt="Engineer Portrait"
                   class="w-full h-full object-cover grayscale contrast-[1.1] brightness-[0.9] group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700"
                 />
@@ -487,7 +489,107 @@ import '../styles/global.css';
         </div>
       </section>
 
- 
+      <!-- Projects -->
+      <section id="projects" class="reveal">
+        <div class="flex items-end justify-between mb-10">
+          <h2 class="text-xs font-mono text-neutral-400 uppercase tracking-widest">
+            03 / Projects
+          </h2>
+          <a href="https://github.com/ritvij14" target="_blank" rel="noopener noreferrer" class="text-xs text-neutral-500 hover:text-black dark:hover:text-white transition-colors">
+            View Github -&gt;
+          </a>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Project Card 1 -->
+          <div class="group relative bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-xl overflow-hidden hover:shadow-lg dark:hover:shadow-none hover:border-neutral-300 dark:hover:border-neutral-700 transition-all duration-300">
+            <div class="aspect-video bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center overflow-hidden">
+              <video
+                autoplay
+                loop
+                muted
+                playsinline
+                class="w-full h-full object-cover"
+              >
+                <source src="/ascii-cam-demo.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3 class="font-title text-lg font-medium tracking-tight text-black dark:text-white mb-1">
+                    ASCII Camera
+                  </h3>
+                  <p class="text-sm text-neutral-500 dark:text-neutral-400 font-light">
+                    Convert your webcam feed or any image into ASCII art in real-time, entirely in the browser.
+                  </p>
+                </div>
+                <div class="flex gap-2">
+                  <a href="https://ascii-cam.ritvij.dev/" target="_blank" rel="noopener noreferrer" class="text-neutral-400 hover:text-black dark:hover:text-white transition-colors">
+                    <iconify-icon icon="solar:link-circle-linear" width="20"></iconify-icon>
+                  </a>
+                </div>
+              </div>
+              <div class="flex gap-2 mt-4">
+                <span class="text-[10px] font-mono bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 px-2 py-1 rounded text-neutral-500">
+                  React.js
+                </span>
+                <span class="text-[10px] font-mono bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 px-2 py-1 rounded text-neutral-500">
+                  Tanstack Router
+                </span>
+                <span class="text-[10px] font-mono bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 px-2 py-1 rounded text-neutral-500">
+                  Tailwind CSS
+                </span>
+                <span class="text-[10px] font-mono bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 px-2 py-1 rounded text-neutral-500">
+                  Vite
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card 2 -->
+          <!-- <div class="group relative bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-xl overflow-hidden hover:shadow-lg dark:hover:shadow-none hover:border-neutral-300 dark:hover:border-neutral-700 transition-all duration-300">
+            <div class="aspect-video bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center overflow-hidden">
+              <div class="w-3/4 h-3/4 bg-white dark:bg-[#111] rounded shadow-sm border border-black/5 dark:border-white/5 flex flex-col group-hover:scale-[1.02] transition-transform duration-500">
+                <div class="h-6 border-b border-black/5 dark:border-white/5 flex items-center px-3 gap-1.5">
+                  <div class="w-2 h-2 rounded-full bg-neutral-300 dark:bg-neutral-700"></div>
+                  <div class="w-2 h-2 rounded-full bg-neutral-300 dark:bg-neutral-700"></div>
+                </div>
+                <div class="flex-1 grid grid-cols-2 gap-2 p-3">
+                  <div class="bg-neutral-50 dark:bg-neutral-800 rounded"></div>
+                  <div class="bg-neutral-50 dark:bg-neutral-800 rounded"></div>
+                  <div class="bg-neutral-50 dark:bg-neutral-800 rounded col-span-2 h-1/2"></div>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3 class="font-title text-lg font-medium tracking-tight text-black dark:text-white mb-1">
+                    E-Commerce API
+                  </h3>
+                  <p class="text-sm text-neutral-500 dark:text-neutral-400 font-light">
+                    Headless commerce solution with Stripe integration.
+                  </p>
+                </div>
+                <div class="flex gap-2">
+                  <a href="#" class="text-neutral-400 hover:text-black dark:hover:text-white transition-colors">
+                    <iconify-icon icon="solar:github-circle-linear" width="20"></iconify-icon>
+                  </a>
+                </div>
+              </div>
+              <div class="flex gap-2 mt-4">
+                <span class="text-[10px] font-mono bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 px-2 py-1 rounded text-neutral-500">
+                  Node
+                </span>
+                <span class="text-[10px] font-mono bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 px-2 py-1 rounded text-neutral-500">
+                  GraphQL
+                </span>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </section>
 
       <!-- Contact Section -->
       <section id="contact" class="reveal pb-20">
