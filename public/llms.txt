@@ -1,0 +1,17 @@
+# Ritvij Kumar Sharma
+
+> Personal site of Ritvij Kumar Sharma — a software engineer (currently Principal Engineer at Kendal AI) who builds clean, accessible, robust software. Site is a single-page portfolio with anchored sections for about, experience, projects, and contact. Domain: https://ritvij.dev
+
+## About
+Ritvij is a software engineer with ~5 years of hands-on experience across the stack. Current work: Kendal AI's AI-powered CRM for real estate brokerages (60+ brokerages, 800+ agents). Previously at Huddle01 (WebRTC/Web3) and AgNext. Background in scalable systems, search infrastructure (ElasticSearch over 10M records), and full-stack product engineering.
+
+## Projects
+- [ASCII Camera](https://ascii-cam.ritvij.dev): Convert a webcam feed or image into ASCII art in real time, in-browser. Built with React, Tanstack Router, Tailwind, Vite.
+- [numis](https://numis.ritvij.dev): Natural-language parser for monetary values — extracts money from text the way a human reads it. TypeScript, React, Vite.
+
+## Links
+- [Homepage](https://ritvij.dev): portfolio, experience, projects, contact
+- [GitHub](https://github.com/ritvij14): open-source code and project repositories
+- [LinkedIn](https://www.linkedin.com/in/rks-1410/): professional background
+- [X / Twitter](https://x.com/ritvij14_): occasional posts
+- [Email](mailto:ritvij2001@gmail.com): get in touch

@@ -3,6 +3,10 @@ dist/
 # generated types
 .astro/
 
+# OG image generation tooling (keep public/og.png committed)
+scripts/generate-og.mjs
+scripts/fonts/
+
 # dependencies
 node_modules/
 

@@ -1,32 +1,123 @@
 ---
-import { Image } from 'astro:assets';
-import profileImage from '../assets/ritvij-dev.png';
-import '../styles/global.css';
+import { Image } from "astro:assets";
+import profileImage from "../assets/ritvij-dev.png";
+import "../styles/global.css";
 ---
 
 <html lang="en" class="dark scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ritvij Kumar Sharma</title>
+    <title>Ritvij Kumar Sharma — Software Engineer</title>
+    <meta
+      name="description"
+      content="Ritvij Kumar Sharma is a software engineer building scalable systems and AI-powered products across the stack."
+    />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).href} />
     <meta name="generator" content={Astro.generator} />
 
-    <!-- Iconify Icons -->
-    <script is:inline src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <!-- Structured Data: Person + WebSite -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://ritvij.dev/#person",
+          name: "Ritvij Kumar Sharma",
+          url: "https://ritvij.dev",
+          image: new URL("/og.png", Astro.site).href,
+          jobTitle: "Software Engineer",
+          worksFor: {
+            "@type": "Organization",
+            name: "Kendal AI",
+            url: "https://kendal.ai"
+          },
+          email: "mailto:ritvij2001@gmail.com",
+          sameAs: [
+            "https://github.com/ritvij14",
+            "https://www.linkedin.com/in/rks-1410/",
+            "https://x.com/ritvij14_"
+          ]
+        },
+        {
+          "@type": "ProfilePage",
+          "@id": "https://ritvij.dev/#profilepage",
+          url: "https://ritvij.dev",
+          mainEntity: { "@id": "https://ritvij.dev/#person" }
+        },
+        {
+          "@type": "WebSite",
+          name: "Ritvij Kumar Sharma",
+          url: "https://ritvij.dev",
+          author: { "@type": "Person", name: "Ritvij Kumar Sharma" }
+        }
+      ]
+    })} />
 
-    <!-- Fonts: Rethink Sans (Google) + Geist (CDN) + IBM Plex Mono -->
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Ritvij Kumar Sharma" />
+    <meta
+      property="og:url"
+      content={new URL(Astro.url.pathname, Astro.site).href}
+    />
+    <meta
+      property="og:title"
+      content="Ritvij Kumar Sharma — Software Engineer"
+    />
+    <meta
+      property="og:description"
+      content="Ritvij Kumar Sharma is a software engineer building scalable systems and AI-powered products across the stack."
+    />
+    <meta
+      property="og:image"
+      content={new URL("/og.png", Astro.site).href}
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Ritvij Kumar Sharma — Software Engineer"
+    />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@ritvij14_" />
+    <meta name="twitter:creator" content="@ritvij14_" />
+    <meta
+      name="twitter:title"
+      content="Ritvij Kumar Sharma — Software Engineer"
+    />
+    <meta
+      name="twitter:description"
+      content="Ritvij Kumar Sharma is a software engineer building scalable systems and AI-powered products across the stack."
+    />
+    <meta
+      name="twitter:image"
+      content={new URL("/og.png", Astro.site).href}
+    />
+    <meta
+      name="twitter:image:alt"
+      content="Ritvij Kumar Sharma — Software Engineer"
+    />
+
+    <!-- Iconify Icons -->
+    <script
+      is:inline
+      async
+      src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"
+    ></script>
+
+    <!-- Fonts: Rethink Sans + IBM Plex Mono (Google, one request) + Geist (jsdelivr) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=Rethink+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
       rel="stylesheet"
     />
     <link
       href="https://cdn.jsdelivr.net/npm/geist@1.0.0/dist/fonts/geist-sans/style.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
 
@@ -39,18 +130,22 @@ import '../styles/global.css';
     <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
       <div
         class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-500/5 dark:bg-white/5 rounded-full blur-[120px]"
-      ></div>
+      >
+      </div>
       <div
         class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-purple-500/5 dark:bg-white/5 rounded-full blur-[120px]"
-      ></div>
+      >
+      </div>
 
       <div
         id="cursor-spotlight"
         class="absolute inset-0 bg-[radial-gradient(600px_circle_at_var(--x,50%)_var(--y,50%),rgba(0,0,0,0.02),transparent_40%)] dark:bg-[radial-gradient(600px_circle_at_var(--x,50%)_var(--y,50%),rgba(255,255,255,0.04),transparent_40%)] opacity-0 transition-opacity duration-500 pointer-events-none"
-      ></div>
+      >
+      </div>
       <div
         class="absolute inset-0 bg-[url('/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay"
-      ></div>
+      >
+      </div>
     </div>
 
     <!-- Navigation -->
@@ -71,8 +166,7 @@ import '../styles/global.css';
             <span class="hidden sm:block">About</span>
             <iconify-icon
               icon="solar:user-linear"
-              class="block sm:hidden text-lg"
-            ></iconify-icon>
+              class="block sm:hidden text-lg"></iconify-icon>
           </a>
 
           <!-- Work -->
@@ -84,8 +178,7 @@ import '../styles/global.css';
             <span class="hidden sm:block">Work</span>
             <iconify-icon
               icon="solar:case-linear"
-              class="block sm:hidden text-lg"
-            ></iconify-icon>
+              class="block sm:hidden text-lg"></iconify-icon>
           </a>
 
           <!-- Projects -->
@@ -97,8 +190,7 @@ import '../styles/global.css';
             <span class="hidden sm:block">Projects</span>
             <iconify-icon
               icon="solar:folder-linear"
-              class="block sm:hidden text-lg"
-            ></iconify-icon>
+              class="block sm:hidden text-lg"></iconify-icon>
           </a>
           <!-- <a
             href="/blogs"
@@ -127,13 +219,11 @@ import '../styles/global.css';
             <iconify-icon
               icon="solar:sun-2-linear"
               class="hidden dark:block"
-              width="18"
-            ></iconify-icon>
+              width="18"></iconify-icon>
             <iconify-icon
               icon="solar:moon-linear"
               class="block dark:hidden"
-              width="18"
-            ></iconify-icon>
+              width="18"></iconify-icon>
           </button>
 
           <!-- Contact Button -->
@@ -169,8 +259,9 @@ import '../styles/global.css';
             <p
               class="text-lg md:text-xl text-neutral-800 dark:text-neutral-200 font-light leading-relaxed max-w-xl"
             >
-              Hi, I am <span class="font-bold underline">Ritvij</span>! I'm a Software Engineer focused on crafting clean, accessible,
-              and robust software using modern technologies.
+              Hi, I am <span class="font-bold underline">Ritvij</span>! I'm a
+              Software Engineer focused on crafting clean, accessible, and
+              robust software using modern technologies.
             </p>
 
             <div class="flex items-center gap-4 mt-10">
@@ -185,17 +276,17 @@ import '../styles/global.css';
                   class="group-hover:translate-x-1 transition-transform"
                 ></iconify-icon>
               </a>
-              <div class="flex gap-3 ml-4 text-neutral-600 dark:text-neutral-400">
+              <div
+                class="flex gap-3 ml-4 text-neutral-600 dark:text-neutral-400"
+              >
                 <!-- github -->
                 <a
                   href="https://github.com/ritvij14"
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="me noopener noreferrer"
                   class="hover:text-black dark:hover:text-white transition-colors"
                 >
-                  <iconify-icon
-                    icon="entypo-social:github"
-                    width="20"
+                  <iconify-icon icon="entypo-social:github" width="20"
                   ></iconify-icon>
                 </a>
                 <!-- mail -->
@@ -203,33 +294,27 @@ import '../styles/global.css';
                   href="mailto:ritvij2001@gmail.com"
                   class="hover:text-black dark:hover:text-white transition-colors"
                 >
-                  <iconify-icon
-                    icon="solar:mention-circle-linear"
-                    width="20"
+                  <iconify-icon icon="solar:mention-circle-linear" width="20"
                   ></iconify-icon>
                 </a>
                 <!-- X (Twitter) -->
                 <a
                   href="https://x.com/ritvij14_"
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="me noopener noreferrer"
                   class="hover:text-black dark:hover:text-white transition-colors"
                 >
-                  <iconify-icon
-                    icon="codicon:twitter"
-                    width="20"
+                  <iconify-icon icon="codicon:twitter" width="20"
                   ></iconify-icon>
                 </a>
                 <!-- linkedin -->
                 <a
                   href="https://www.linkedin.com/in/rks-1410/"
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="me noopener noreferrer"
                   class="hover:text-black dark:hover:text-white transition-colors"
                 >
-                  <iconify-icon
-                    icon="pajamas:linkedin"
-                    width="20"
+                  <iconify-icon icon="pajamas:linkedin" width="20"
                   ></iconify-icon>
                 </a>
                 <!-- resume -->
@@ -239,63 +324,61 @@ import '../styles/global.css';
                   rel="noopener noreferrer"
                   class="hover:text-black dark:hover:text-white transition-colors"
                 >
-                  <iconify-icon
-                    icon="mdi:resume"
-                    width="20"
-                  ></iconify-icon>
+                  <iconify-icon icon="mdi:resume" width="20"></iconify-icon>
                 </a>
               </div>
             </div>
           </div>
-            <div class="relative group md:col-span-5 w-full max-w-sm md:max-w-none mx-auto">
-              <div
-                class="absolute -inset-4 bg-linear-to-tr from-blue-500/10 via-transparent to-purple-500/10 rounded-4xl blur-2xl opacity-0 group-hover:opacity-100 transition duration-1000"
-              ></div>
-              <div
-                class="relative aspect-4/5 rounded-2xl overflow-hidden bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-2xl transition-all duration-500 group-hover:scale-[1.02]"
-              >
-                <Image
-                  src={profileImage}
-                  alt="Engineer Portrait"
-                  class="w-full h-full object-cover grayscale contrast-[1.1] brightness-[0.9] group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700"
-                />
-              </div>
+          <div
+            class="relative group md:col-span-5 w-full max-w-sm md:max-w-none mx-auto"
+          >
+            <div
+              class="absolute -inset-4 bg-linear-to-tr from-blue-500/10 via-transparent to-purple-500/10 rounded-4xl blur-2xl opacity-0 group-hover:opacity-100 transition duration-1000"
+            >
             </div>
+            <div
+              class="relative aspect-4/5 rounded-2xl overflow-hidden bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-2xl transition-all duration-500 group-hover:scale-[1.02]"
+            >
+              <Image
+                src={profileImage}
+                alt="Portrait of Ritvij Kumar Sharma, software engineer"
+                class="w-full h-full object-cover grayscale contrast-[1.1] brightness-[0.9] group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
       <!-- About Section -->
       <section id="about" class="reveal">
-        <h2
-          class="text-xs font-mono uppercase tracking-widest mb-8"
-        >
+        <h2 class="text-xs font-mono uppercase tracking-widest mb-8">
           01 / About
         </h2>
-          <div
-            class="md:col-span-2 space-y-6 text-neutral-800 dark:text-neutral-200 text-xl font-light leading-relaxed"
-          >
-            <p>
-              I believe complexity should be managed, not exposed. My approach
-              to engineering centers on simplicity.
-            </p>
-            <p>
-              With a background in software engineering and building scalable, high-impact systems, I
-              bridge the gap between ideas and execution. I enjoy solving problems
-              that require a deep understanding of the entire stack.
-            </p>
-            <p>
-              My coding journey began way back in high-school when I was introduced to
-              Java programming language. Fast forward to today, I have worked on several projects
-              and have gained 5 years of hands-on experience in software development.
-            </p>
-          </div>
+        <div
+          class="md:col-span-2 space-y-6 text-neutral-800 dark:text-neutral-200 text-xl font-light leading-relaxed"
+        >
+          <p>
+            I believe complexity should be managed, not exposed. My approach to
+            engineering centers on simplicity.
+          </p>
+          <p>
+            With a background in software engineering and building scalable,
+            high-impact systems, I bridge the gap between ideas and execution. I
+            enjoy solving problems that require a deep understanding of the
+            entire stack.
+          </p>
+          <p>
+            My coding journey began way back in high-school when I was
+            introduced to Java programming language. Fast forward to today, I
+            have worked on several projects and have gained 5 years of hands-on
+            experience in software development.
+          </p>
+        </div>
       </section>
 
       <!-- Work Experience -->
       <section id="work" class="reveal">
-        <h2
-          class="text-xs font-mono uppercase tracking-widest mb-10"
-        >
+        <h2 class="text-xs font-mono uppercase tracking-widest mb-10">
           02 / Experience
         </h2>
 
@@ -305,8 +388,9 @@ import '../styles/global.css';
           <!-- Job 4 -->
           <div class="relative pl-8">
             <div
-              class="absolute -left-[5px] top-2 w-[9px] h-[9px] rounded-full bg-neutral-300 dark:bg-neutral-700 ring-4 ring-white dark:ring-black"
-            ></div>
+              class="absolute -left-1.25 top-2 w-2.25 h-2.25 rounded-full bg-neutral-300 dark:bg-neutral-700 ring-4 ring-white dark:ring-black"
+            >
+            </div>
             <div
               class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2"
             >
@@ -320,36 +404,44 @@ import '../styles/global.css';
               </span>
             </div>
             <a
-                href="https://kendal.ai"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="group mb-3 flex w-fit items-center gap-2 text-sm font-medium border-b border-neutral-300 dark:border-neutral-700 pb-1 hover:border-black dark:hover:border-white transition-colors"
-              >
-                Kendal AI
-                <iconify-icon
-                  icon="radix-icons:arrow-top-right"
-                  width="16"
-                  class="group-hover:scale-[1.02] transition-all"
-                ></iconify-icon>
-              </a>
+              href="https://kendal.ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group mb-3 flex w-fit items-center gap-2 text-sm font-medium border-b border-neutral-300 dark:border-neutral-700 pb-1 hover:border-black dark:hover:border-white transition-colors"
+            >
+              Kendal AI
+              <iconify-icon
+                icon="radix-icons:arrow-top-right"
+                width="16"
+                class="group-hover:scale-[1.02] transition-all"></iconify-icon>
+            </a>
             <div
               class="text-base text-neutral-800 dark:text-neutral-300 font-light leading-relaxed max-w-4xl"
             >
               <ul class="list-disc">
                 <li>
-                  Building Kendal AI's AI-powered CRM, now used by <strong>60+ real estate brokerages and 800+ Agents</strong>.
+                  Building Kendal AI's AI-powered CRM, now used by <strong
+                    >60+ real estate brokerages and 800+ Agents</strong
+                  >.
                 </li>
                 <li>
-                  Built a scalable Contact, Property, and Deal Management System with real-time filtering, AI Search, and Analytics dashboards.
+                  Built a scalable Contact, Property, and Deal Management System
+                  with real-time filtering, AI Search, and Analytics dashboards.
                 </li>
                 <li>
-                  Built a No-Code Website Builder for brokerages to launch websites for showcasing listings and generating leads.
+                  Built a No-Code Website Builder for brokerages to launch
+                  websites for showcasing listings and generating leads.
                 </li>
                 <li>
-                  Built an Email Marketing System supporting <strong>100k emails per month</strong>.
+                  Built an Email Marketing System supporting <strong
+                    >100k emails per month</strong
+                  >.
                 </li>
                 <li>
-                  Built the foundation of search/aggregation system with ElasticSearch, which went from full document scans to <strong>sub-800ms searches across 10 Million Records</strong>.
+                  Built the foundation of search/aggregation system with
+                  ElasticSearch, which went from full document scans to <strong
+                    >sub-800ms searches across 10 Million Records</strong
+                  >.
                 </li>
               </ul>
             </div>
@@ -358,8 +450,9 @@ import '../styles/global.css';
           <!-- Job 3 -->
           <div class="relative pl-8">
             <div
-              class="absolute -left-[5px] top-2 w-[9px] h-[9px] rounded-full bg-neutral-300 dark:bg-neutral-700 ring-4 ring-white dark:ring-black"
-            ></div>
+              class="absolute -left-1.25 top-2 w-2.25 h-2.25 rounded-full bg-neutral-300 dark:bg-neutral-700 ring-4 ring-white dark:ring-black"
+            >
+            </div>
             <div
               class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2"
             >
@@ -373,30 +466,32 @@ import '../styles/global.css';
               </span>
             </div>
             <a
-                href="https://huddle01.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="group mb-3 flex w-fit items-center gap-2 text-sm font-medium border-b border-neutral-300 dark:border-neutral-700 pb-1 hover:border-black dark:hover:border-white transition-colors"
-              >
-                Huddle01
-                <iconify-icon
-                  icon="radix-icons:arrow-top-right"
-                  width="16"
-                  class="group-hover:scale-[1.02] transition-all"
-                ></iconify-icon>
-              </a>
+              href="https://huddle01.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group mb-3 flex w-fit items-center gap-2 text-sm font-medium border-b border-neutral-300 dark:border-neutral-700 pb-1 hover:border-black dark:hover:border-white transition-colors"
+            >
+              Huddle01
+              <iconify-icon
+                icon="radix-icons:arrow-top-right"
+                width="16"
+                class="group-hover:scale-[1.02] transition-all"></iconify-icon>
+            </a>
             <div
               class="text-base text-neutral-800 dark:text-neutral-300 font-light leading-relaxed max-w-4xl"
             >
               <ul class="list-disc">
                 <li>
-                  Built V1 of the Flutter SDK with WebRTC and live video calling so developers can build Mobile apps on top of Huddle01 Tech.
+                  Built V1 of the Flutter SDK with WebRTC and live video calling
+                  so developers can build Mobile apps on top of Huddle01 Tech.
                 </li>
                 <li>
-                  Integrated Web3 features including wallet authentication, NFTs, tipping in livestreams, and token-gated meetings.
+                  Integrated Web3 features including wallet authentication,
+                  NFTs, tipping in livestreams, and token-gated meetings.
                 </li>
                 <li>
-                  Contributed to the React Native Mobile App by adding Wallet Authentication and WebRTC connection layer.
+                  Contributed to the React Native Mobile App by adding Wallet
+                  Authentication and WebRTC connection layer.
                 </li>
               </ul>
             </div>
@@ -405,8 +500,9 @@ import '../styles/global.css';
           <!-- Job 2 -->
           <div class="relative pl-8">
             <div
-              class="absolute -left-[5px] top-2 w-[9px] h-[9px] rounded-full bg-neutral-300 dark:bg-neutral-700 ring-4 ring-white dark:ring-black"
-            ></div>
+              class="absolute -left-1.25 top-2 w-2.25 h-2.25 rounded-full bg-neutral-300 dark:bg-neutral-700 ring-4 ring-white dark:ring-black"
+            >
+            </div>
             <div
               class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2"
             >
@@ -420,24 +516,25 @@ import '../styles/global.css';
               </span>
             </div>
             <a
-                href="https://www.agnext.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="group mb-3 flex w-fit items-center gap-2 text-sm font-medium border-b border-neutral-300 dark:border-neutral-700 pb-1 hover:border-black dark:hover:border-white transition-colors"
-              >
-                AgNext Technologies
-                <iconify-icon
-                  icon="radix-icons:arrow-top-right"
-                  width="16"
-                  class="group-hover:scale-[1.02] transition-all"
-                ></iconify-icon>
-              </a>
+              href="https://www.agnext.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group mb-3 flex w-fit items-center gap-2 text-sm font-medium border-b border-neutral-300 dark:border-neutral-700 pb-1 hover:border-black dark:hover:border-white transition-colors"
+            >
+              AgNext Technologies
+              <iconify-icon
+                icon="radix-icons:arrow-top-right"
+                width="16"
+                class="group-hover:scale-[1.02] transition-all"></iconify-icon>
+            </a>
             <div
               class="text-base text-neutral-800 dark:text-neutral-300 font-light leading-relaxed max-w-4xl"
             >
               <ul class="list-disc">
                 <li>
-                  Worked on the redesign of the Laboratory Information Management System(LIMS) for AgNext, and contributed to Report Storage system.
+                  Worked on the redesign of the Laboratory Information
+                  Management System(LIMS) for AgNext, and contributed to Report
+                  Storage system.
                 </li>
               </ul>
             </div>
@@ -446,8 +543,9 @@ import '../styles/global.css';
           <!-- Job 1 -->
           <div class="relative pl-8">
             <div
-              class="absolute -left-[5px] top-2 w-[9px] h-[9px] rounded-full bg-neutral-300 dark:bg-neutral-700 ring-4 ring-white dark:ring-black"
-            ></div>
+              class="absolute -left-1.25 top-2 w-2.25 h-2.25 rounded-full bg-neutral-300 dark:bg-neutral-700 ring-4 ring-white dark:ring-black"
+            >
+            </div>
             <div
               class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2"
             >
@@ -461,24 +559,24 @@ import '../styles/global.css';
               </span>
             </div>
             <a
-                href="https://www.lifesparktech.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="group mb-3 flex w-fit items-center gap-2 text-sm font-medium border-b border-neutral-300 dark:border-neutral-700 pb-1 hover:border-black dark:hover:border-white transition-colors"
-              >
-                LifeSpark Technologies
-                <iconify-icon
-                  icon="radix-icons:arrow-top-right"
-                  width="16"
-                  class="group-hover:scale-[1.02] transition-all"
-                ></iconify-icon>
-              </a>
+              href="https://www.lifesparktech.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group mb-3 flex w-fit items-center gap-2 text-sm font-medium border-b border-neutral-300 dark:border-neutral-700 pb-1 hover:border-black dark:hover:border-white transition-colors"
+            >
+              LifeSpark Technologies
+              <iconify-icon
+                icon="radix-icons:arrow-top-right"
+                width="16"
+                class="group-hover:scale-[1.02] transition-all"></iconify-icon>
+            </a>
             <div
               class="text-base text-neutral-800 dark:text-neutral-300 font-light leading-relaxed max-w-4xl"
             >
               <ul class="list-disc">
                 <li>
-                  MVP for COVID-safety mobile app - alerting users based on GPS + Bluetooth.
+                  MVP for COVID-safety mobile app - alerting users based on GPS
+                  + Bluetooth.
                 </li>
               </ul>
             </div>
@@ -489,18 +587,29 @@ import '../styles/global.css';
       <!-- Projects -->
       <section id="projects" class="reveal">
         <div class="flex items-end justify-between mb-10">
-          <h2 class="text-xs font-mono text-neutral-400 uppercase tracking-widest">
+          <h2
+            class="text-xs font-mono text-neutral-400 uppercase tracking-widest"
+          >
             03 / Projects
           </h2>
-          <a href="https://github.com/ritvij14" target="_blank" rel="noopener noreferrer" class="text-xs text-neutral-500 hover:text-black dark:hover:text-white transition-colors">
+          <a
+            href="https://github.com/ritvij14"
+            target="_blank"
+            rel="me noopener noreferrer"
+            class="text-xs text-neutral-500 hover:text-black dark:hover:text-white transition-colors"
+          >
             View Github -&gt;
           </a>
         </div>
 
         <div class="grid md:grid-cols-2 gap-6">
           <!-- Project Card 1 -->
-          <div class="group relative bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-xl overflow-hidden hover:shadow-lg dark:hover:shadow-none hover:border-neutral-300 dark:hover:border-neutral-700 transition-all duration-300">
-            <div class="aspect-video bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center overflow-hidden">
+          <div
+            class="group relative bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-xl overflow-hidden hover:shadow-lg dark:hover:shadow-none hover:border-neutral-300 dark:hover:border-neutral-700 transition-all duration-300"
+          >
+            <div
+              class="aspect-video bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center overflow-hidden"
+            >
               <video
                 autoplay
                 loop
@@ -514,30 +623,118 @@ import '../styles/global.css';
             <div class="p-6">
               <div class="flex justify-between items-start">
                 <div>
-                  <h3 class="font-title text-lg font-medium tracking-tight text-black dark:text-white mb-1">
+                  <h3
+                    class="font-title text-lg font-medium tracking-tight text-black dark:text-white mb-1"
+                  >
                     ASCII Camera
                   </h3>
-                  <p class="text-sm text-neutral-500 dark:text-neutral-400 font-light">
-                    Convert your webcam feed or any image into ASCII art in real-time, entirely in the browser.
+                  <p
+                    class="text-sm text-neutral-500 dark:text-neutral-400 font-light"
+                  >
+                    Convert your webcam feed or any image into ASCII art in
+                    real-time, entirely in the browser.
                   </p>
                 </div>
                 <div class="flex gap-2">
-                  <a href="https://ascii-cam.ritvij.dev/" target="_blank" rel="noopener noreferrer" class="text-neutral-400 hover:text-black dark:hover:text-white transition-colors">
-                    <iconify-icon icon="solar:link-circle-linear" width="20"></iconify-icon>
+                  <a
+                    href="https://ascii-cam.ritvij.dev/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-neutral-400 hover:text-black dark:hover:text-white transition-colors"
+                  >
+                    <iconify-icon icon="solar:link-circle-linear" width="20"
+                    ></iconify-icon>
                   </a>
                 </div>
               </div>
               <div class="flex gap-2 mt-4">
-                <span class="text-[10px] font-mono bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 px-2 py-1 rounded text-neutral-500">
+                <span
+                  class="text-[10px] font-mono bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 px-2 py-1 rounded text-neutral-500"
+                >
                   React.js
                 </span>
-                <span class="text-[10px] font-mono bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 px-2 py-1 rounded text-neutral-500">
+                <span
+                  class="text-[10px] font-mono bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 px-2 py-1 rounded text-neutral-500"
+                >
                   Tanstack Router
                 </span>
-                <span class="text-[10px] font-mono bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 px-2 py-1 rounded text-neutral-500">
+                <span
+                  class="text-[10px] font-mono bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 px-2 py-1 rounded text-neutral-500"
+                >
                   Tailwind CSS
                 </span>
-                <span class="text-[10px] font-mono bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 px-2 py-1 rounded text-neutral-500">
+                <span
+                  class="text-[10px] font-mono bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 px-2 py-1 rounded text-neutral-500"
+                >
+                  Vite
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card 2: numis -->
+          <div
+            class="group relative bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-xl overflow-hidden hover:shadow-lg dark:hover:shadow-none hover:border-neutral-300 dark:hover:border-neutral-700 transition-all duration-300"
+          >
+            <div
+              class="aspect-video bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center overflow-hidden"
+            >
+              <img
+                src="/numis-og.png"
+                alt="numis — natural-language monetary parser"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3
+                    class="font-title text-lg font-medium tracking-tight text-black dark:text-white mb-1"
+                  >
+                    numis
+                  </h3>
+                  <p
+                    class="text-sm text-neutral-500 dark:text-neutral-400 font-light"
+                  >
+                    Natural-language parser for monetary values — extract money
+                    from text like a human would read it.
+                  </p>
+                </div>
+                <div class="flex gap-2">
+                  <a
+                    href="https://numis.ritvij.dev"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-neutral-400 hover:text-black dark:hover:text-white transition-colors"
+                  >
+                    <iconify-icon icon="solar:link-circle-linear" width="20"
+                    ></iconify-icon>
+                  </a>
+                  <a
+                    href="https://github.com/ritvij14/numis"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-neutral-400 hover:text-black dark:hover:text-white transition-colors"
+                  >
+                    <iconify-icon icon="solar:github-circle-linear" width="20"
+                    ></iconify-icon>
+                  </a>
+                </div>
+              </div>
+              <div class="flex gap-2 mt-4">
+                <span
+                  class="text-[10px] font-mono bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 px-2 py-1 rounded text-neutral-500"
+                >
+                  TypeScript
+                </span>
+                <span
+                  class="text-[10px] font-mono bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 px-2 py-1 rounded text-neutral-500"
+                >
+                  React
+                </span>
+                <span
+                  class="text-[10px] font-mono bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 px-2 py-1 rounded text-neutral-500"
+                >
                   Vite
                 </span>
               </div>
@@ -590,10 +787,8 @@ import '../styles/global.css';
 
       <!-- Contact Section -->
       <section id="contact" class="reveal pb-20">
-        <h2
-          class="text-xs font-mono uppercase tracking-widest mb-10"
-        >
-          03 / Contact
+        <h2 class="text-xs font-mono uppercase tracking-widest mb-10">
+          04 / Contact
         </h2>
 
         <div
@@ -607,59 +802,49 @@ import '../styles/global.css';
               <p
                 class="text-sm text-neutral-500 dark:text-neutral-400 font-light mb-8"
               >
-                Want to say hi? I'm always open
-                to discussing new ideas.
+                Want to say hi? I'm always open to discussing new ideas.
               </p>
             </div>
 
             <div class="space-y-4">
-                <a
-                  href="mailto:ritvij2001@gmail.com"
-                  class="flex items-center text-lg gap-3 text-black dark:text-white hover:opacity-70 transition-opacity"
+              <a
+                href="mailto:ritvij2001@gmail.com"
+                class="flex items-center text-lg gap-3 text-black dark:text-white hover:opacity-70 transition-opacity"
+              >
+                <div
+                  class="rounded-full bg-neutral-200 dark:bg-neutral-800 flex items-center"
                 >
-                  <div
-                    class="rounded-full bg-neutral-200 dark:bg-neutral-800 flex items-center"
-                  >
-                    <iconify-icon
-                      icon="solar:letter-linear"
-                      width="16"
-                    ></iconify-icon>
-                  </div>
-                  ritvij2001@gmail.com
-                </a>
-                <div class="flex gap-3 text-neutral-600 dark:text-neutral-400">
-                
-                
+                  <iconify-icon icon="solar:letter-linear" width="16"
+                  ></iconify-icon>
+                </div>
+                ritvij2001@gmail.com
+              </a>
+              <div class="flex gap-3 text-neutral-600 dark:text-neutral-400">
                 <!-- X (Twitter) -->
                 <a
                   href="https://x.com/ritvij14_"
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="me noopener noreferrer"
                   class="hover:text-black dark:hover:text-white transition-colors"
                 >
-                  <iconify-icon
-                    icon="codicon:twitter"
-                    width="20"
+                  <iconify-icon icon="codicon:twitter" width="20"
                   ></iconify-icon>
                 </a>
                 <!-- linkedin -->
                 <a
                   href="https://www.linkedin.com/in/rks-1410/"
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="me noopener noreferrer"
                   class="hover:text-black dark:hover:text-white transition-colors"
                 >
-                  <iconify-icon
-                    icon="pajamas:linkedin"
-                    width="20"
+                  <iconify-icon icon="pajamas:linkedin" width="20"
                   ></iconify-icon>
                 </a>
-                
               </div>
-              </div>
+            </div>
 
             <!-- <form class="space-y-4" onsubmit="event.preventDefault()"> -->
-              <!-- <div class="grid grid-cols-2 gap-4">
+            <!-- <div class="grid grid-cols-2 gap-4">
                 <div class="space-y-1">
                   <label class="text-xs font-mono text-neutral-500">Name</label>
                   <input
@@ -679,7 +864,7 @@ import '../styles/global.css';
                   />
                 </div>
               </div> -->
-              <!-- <div class="space-y-1">
+            <!-- <div class="space-y-1">
                 <label class="text-xs font-mono text-neutral-500">
                   Message
                 </label>
@@ -690,8 +875,8 @@ import '../styles/global.css';
                 ></textarea>
               </div> -->
 
-              <!-- Custom Checkbox -->
-              <!-- <div class="flex items-center gap-2 pt-2">
+            <!-- Custom Checkbox -->
+            <!-- <div class="flex items-center gap-2 pt-2">
                 <label class="relative inline-flex items-center cursor-pointer">
                   <input type="checkbox" class="peer sr-only" />
                   <div
@@ -708,7 +893,7 @@ import '../styles/global.css';
                 </label>
               </div> -->
 
-              <!-- <button
+            <!-- <button
                 class="mt-4 bg-black dark:bg-white text-white dark:text-black text-sm font-medium px-6 py-2.5 rounded-full hover:opacity-80 transition-opacity w-full md:w-auto"
               >
                 Send Message
@@ -745,172 +930,12 @@ import '../styles/global.css';
         },
         {
           threshold: 0.1,
-        }
+        },
       );
 
       document
         .querySelectorAll(".reveal")
         .forEach((el) => observer.observe(el));
-
-        /**
-         *      <!-- Projects -->
-      <section id="projects" class="reveal">
-        <!-- <div class="flex items-end justify-between mb-10">
-          <h2
-            class="text-xs font-mono uppercase tracking-widest"
-          >
-            03 / Projects
-          </h2>
-          <a
-            href="#"
-            class="text-xs text-neutral-500 hover:text-black dark:hover:text-white transition-colors"
-          >
-            View Github ->
-          </a>
-        </div> -->
-
-        <div class="grid md:grid-cols-2 gap-6">
-          <!-- Project Card 1 -->
-          <div
-            class="group relative bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-xl overflow-hidden hover:shadow-lg dark:hover:shadow-none hover:border-neutral-300 dark:hover:border-neutral-700 transition-all duration-300"
-          >
-            <div
-              class="aspect-video bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center overflow-hidden"
-            >
-              <!-- Browser Frame Illustration -->
-              <div
-                class="w-3/4 h-3/4 bg-white dark:bg-[#111] rounded shadow-sm border border-black/5 dark:border-white/5 flex flex-col group-hover:scale-[1.02] transition-transform duration-500"
-              >
-                <div
-                  class="h-6 border-b border-black/5 dark:border-white/5 flex items-center px-3 gap-1.5"
-                >
-                  <div class="w-2 h-2 rounded-full bg-red-400/80"></div>
-                  <div class="w-2 h-2 rounded-full bg-yellow-400/80"></div>
-                  <div class="w-2 h-2 rounded-full bg-green-400/80"></div>
-                </div>
-                <div class="flex-1 p-4 flex items-center justify-center">
-                  <div
-                    class="w-8 h-8 rounded bg-neutral-100 dark:bg-neutral-800"
-                  ></div>
-                  <div
-                    class="w-24 h-2 ml-2 rounded bg-neutral-100 dark:bg-neutral-800"
-                  ></div>
-                </div>
-              </div>
-            </div>
-            <div class="p-6">
-              <div class="flex justify-between items-start">
-                <div>
-                  <h3
-                    class="font-title text-lg font-medium tracking-tight text-black dark:text-white mb-1"
-                  >
-                    Financial Dashboard
-                  </h3>
-                  <p
-                    class="text-sm text-neutral-500 dark:text-neutral-400 font-light"
-                  >
-                    Data visualization platform for real-time analytics.
-                  </p>
-                </div>
-                <div class="flex gap-2">
-                  <a
-                    href="#"
-                    class="text-neutral-400 hover:text-black dark:hover:text-white transition-colors"
-                  >
-                    <iconify-icon
-                      icon="solar:link-circle-linear"
-                      width="20"
-                    ></iconify-icon>
-                  </a>
-                </div>
-              </div>
-              <div class="flex gap-2 mt-4">
-                <span
-                  class="text-[10px] font-mono bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 px-2 py-1 rounded text-neutral-500"
-                >
-                  Vue.js
-                </span>
-                <span
-                  class="text-[10px] font-mono bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 px-2 py-1 rounded text-neutral-500"
-                >
-                  D3.js
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project Card 2 -->
-          <div
-            class="group relative bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 rounded-xl overflow-hidden hover:shadow-lg dark:hover:shadow-none hover:border-neutral-300 dark:hover:border-neutral-700 transition-all duration-300"
-          >
-            <div
-              class="aspect-video bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center overflow-hidden"
-            >
-              <div
-                class="w-3/4 h-3/4 bg-white dark:bg-[#111] rounded shadow-sm border border-black/5 dark:border-white/5 flex flex-col group-hover:scale-[1.02] transition-transform duration-500"
-              >
-                <div
-                  class="h-6 border-b border-black/5 dark:border-white/5 flex items-center px-3 gap-1.5"
-                >
-                  <div
-                    class="w-2 h-2 rounded-full bg-neutral-300 dark:bg-neutral-700"
-                  ></div>
-                  <div
-                    class="w-2 h-2 rounded-full bg-neutral-300 dark:bg-neutral-700"
-                  ></div>
-                </div>
-                <div class="flex-1 grid grid-cols-2 gap-2 p-3">
-                  <div class="bg-neutral-50 dark:bg-neutral-800 rounded"></div>
-                  <div class="bg-neutral-50 dark:bg-neutral-800 rounded"></div>
-                  <div
-                    class="bg-neutral-50 dark:bg-neutral-800 rounded col-span-2 h-1/2"
-                  ></div>
-                </div>
-              </div>
-            </div>
-            <div class="p-6">
-              <div class="flex justify-between items-start">
-                <div>
-                  <h3
-                    class="font-title text-lg font-medium tracking-tight text-black dark:text-white mb-1"
-                  >
-                    E-Commerce API
-                  </h3>
-                  <p
-                    class="text-sm text-neutral-500 dark:text-neutral-400 font-light"
-                  >
-                    Headless commerce solution with Stripe integration.
-                  </p>
-                </div>
-                <div class="flex gap-2">
-                  <a
-                    href="#"
-                    class="text-neutral-400 hover:text-black dark:hover:text-white transition-colors"
-                  >
-                    <iconify-icon
-                      icon="solar:github-circle-linear"
-                      width="20"
-                    ></iconify-icon>
-                  </a>
-                </div>
-              </div>
-              <div class="flex gap-2 mt-4">
-                <span
-                  class="text-[10px] font-mono bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 px-2 py-1 rounded text-neutral-500"
-                >
-                  Node
-                </span>
-                <span
-                  class="text-[10px] font-mono bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 px-2 py-1 rounded text-neutral-500"
-                >
-                  GraphQL
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-         */
     </script>
   </body>
 </html>
