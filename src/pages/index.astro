@@ -1,5 +1,7 @@
 ---
 import { Image } from "astro:assets";
+import SpeedInsights from "@vercel/speed-insights/astro";
+import Analytics from "@vercel/analytics/astro";
 import profileImage from "../assets/ritvij-dev.png";
 import "../styles/global.css";
 ---
@@ -17,42 +19,45 @@ import "../styles/global.css";
     <meta name="generator" content={Astro.generator} />
 
     <!-- Structured Data: Person + WebSite -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Person",
-          "@id": "https://ritvij.dev/#person",
-          name: "Ritvij Kumar Sharma",
-          url: "https://ritvij.dev",
-          image: new URL("/og.png", Astro.site).href,
-          jobTitle: "Software Engineer",
-          worksFor: {
-            "@type": "Organization",
-            name: "Kendal AI",
-            url: "https://kendal.ai"
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://ritvij.dev/#person",
+            name: "Ritvij Kumar Sharma",
+            url: "https://ritvij.dev",
+            image: new URL("/og.png", Astro.site).href,
+            jobTitle: "Software Engineer",
+            worksFor: {
+              "@type": "Organization",
+              name: "Kendal AI",
+              url: "https://kendal.ai",
+            },
+            email: "mailto:ritvij2001@gmail.com",
+            sameAs: [
+              "https://github.com/ritvij14",
+              "https://www.linkedin.com/in/rks-1410/",
+              "https://x.com/ritvij14_",
+            ],
           },
-          email: "mailto:ritvij2001@gmail.com",
-          sameAs: [
-            "https://github.com/ritvij14",
-            "https://www.linkedin.com/in/rks-1410/",
-            "https://x.com/ritvij14_"
-          ]
-        },
-        {
-          "@type": "ProfilePage",
-          "@id": "https://ritvij.dev/#profilepage",
-          url: "https://ritvij.dev",
-          mainEntity: { "@id": "https://ritvij.dev/#person" }
-        },
-        {
-          "@type": "WebSite",
-          name: "Ritvij Kumar Sharma",
-          url: "https://ritvij.dev",
-          author: { "@type": "Person", name: "Ritvij Kumar Sharma" }
-        }
-      ]
-    })} />
+          {
+            "@type": "ProfilePage",
+            "@id": "https://ritvij.dev/#profilepage",
+            url: "https://ritvij.dev",
+            mainEntity: { "@id": "https://ritvij.dev/#person" },
+          },
+          {
+            "@type": "WebSite",
+            name: "Ritvij Kumar Sharma",
+            url: "https://ritvij.dev",
+            author: { "@type": "Person", name: "Ritvij Kumar Sharma" },
+          },
+        ],
+      })}
+    />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -69,10 +74,7 @@ import "../styles/global.css";
       property="og:description"
       content="Ritvij Kumar Sharma is a software engineer building scalable systems and AI-powered products across the stack."
     />
-    <meta
-      property="og:image"
-      content={new URL("/og.png", Astro.site).href}
-    />
+    <meta property="og:image" content={new URL("/og.png", Astro.site).href} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta
@@ -92,10 +94,7 @@ import "../styles/global.css";
       name="twitter:description"
       content="Ritvij Kumar Sharma is a software engineer building scalable systems and AI-powered products across the stack."
     />
-    <meta
-      name="twitter:image"
-      content={new URL("/og.png", Astro.site).href}
-    />
+    <meta name="twitter:image" content={new URL("/og.png", Astro.site).href} />
     <meta
       name="twitter:image:alt"
       content="Ritvij Kumar Sharma — Software Engineer"
@@ -937,5 +936,9 @@ import "../styles/global.css";
         .querySelectorAll(".reveal")
         .forEach((el) => observer.observe(el));
     </script>
+
+    <!-- Vercel observability -->
+    <SpeedInsights />
+    <Analytics />
   </body>
 </html>
